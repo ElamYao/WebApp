@@ -1,0 +1,75 @@
+		
+		  看书：<input type="checkbox" name="checkbox" value=1><br>
+写字：<input type="checkbox" name="checkbox"value=2><br>
+打飞机：<input type="checkbox" name="checkbox"value=3><br>
+玩游戏：<input type="checkbox" name="checkbox"value=4><br>
+<button onclick="checkboxed('checkbox')">全选</button>
+<button onclick="uncheckboxed('checkbox')">取消全选</button>
+
+
+
+js代码
+//全选
+		function checkboxed(object){
+			
+		var obj=document.getElementsByName(object);
+			
+			if(null!=obj)
+			{
+				
+				for (var i=0;i<obj.length;i++) {
+					
+					obj[i].checked="checked";
+					
+				}
+				
+				
+			}
+			
+		}
+		
+		
+		//取消全选
+		function uncheckboxed(object){
+			
+		var obj=document.getElementsByName(object);
+			
+			if(null!=obj)
+			{
+				
+				for (var i=0;i<obj.length;i++) {
+					
+					obj[i].checked="";
+					
+				}
+				
+				
+			}
+			
+		}
+
+
+
+
+
+
+
+
+
+第二种
+
+看书：<input type="checkbox" name="checkbox" value=1><br>
+写字：<input type="checkbox" name="checkbox"value=2><br>
+打飞机：<input type="checkbox" name="checkbox"value=3><br>
+玩游戏：<input type="checkbox" name="checkbox"value=4><br>
+<button onclick="allcheck()">全选/取消</button>
+
+js
+
+var checkAll = false;
+function allcheck(){
+    checkAll = !checkAll;
+    let inputs = document.getElementsByName('checkbox')
+    for(var i =0;i<inputs.length;i++){inputs[i].checked = checkAll}
+}
+
